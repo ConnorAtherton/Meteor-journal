@@ -1,0 +1,137 @@
+/*********************************************
+ * UI BUBBLE
+ *********************************************/
+
+.text-options {
+
+  -webkit-transition: opacity 250ms, margin 250ms;
+  -moz-transition: opacity 250ms, margin 250ms;
+  -ms-transition: opacity 250ms, margin 250ms;
+  -o-transition: opacity 250ms, margin 250ms;
+  transition: opacity 250ms, margin 250ms;
+
+  position: absolute;
+  left: -999px;
+  top: -999px;
+  color: #fff;
+  height: 0px;
+  width: 0px;
+  z-index: 5;
+  margin-top: 5px;
+  opacity: 0;
+}
+
+.text-options.fade {
+  opacity: 0;
+  margin-top: -5px;
+}
+
+.text-options.active {
+  opacity: 1;
+  margin-top: -1px;
+}
+
+.options {
+  background-color: rgba(0,0,0,0.9);
+  position: absolute;
+  border-radius: 5px;
+  margin-left: -63px;
+  margin-top: -46px;
+  z-index: 1000;
+  padding: 5px 4px 5px 5px;
+  width: 150px;
+  height: 40px;
+
+  -webkit-transition: all 300ms ease-in-out;
+  -moz-transition: all 300ms ease-in-out;
+  -ms-transition: all 300ms ease-in-out;
+  -o-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+
+  .italic {
+    font-style: italic;
+  }
+  button {
+    -webkit-transition: all 500ms ease-in-out;
+    -moz-transition: all 500ms ease-in-out;
+    -ms-transition: all 500ms ease-in-out;
+    -o-transition: all 500ms ease-in-out;
+    transition: all 500ms ease-in-out;
+
+    float: left;
+    width: 28px;
+    opacity: 0.6;
+    color: white;
+    height: 30px;
+    border-radius: 3px;
+    margin-right: 1px;
+    font-family: 'Lora', serif;
+
+    &.icon-link {
+      font-family: 'fontello' !important;
+    }
+
+    &:hover {
+      opacity: 0.95;
+    }
+  }
+}
+
+.options.url-mode {
+  width: 275px;
+  margin-left: -137px;
+
+  .bold, .italic, .quote {
+    width: 0px;
+    overflow: hidden;
+    margin-right: 0px;
+    opacity: 0;
+  }
+  input {
+    border-left: 2px solid transparent;
+    padding-right: 5px;
+    padding-left: 5px;
+    width: 236px;
+  }
+}
+
+.options input {
+  -webkit-transition: all 300ms ease-in-out;
+  -moz-transition: all 300ms ease-in-out;
+  -ms-transition: all 300ms ease-in-out;
+  -o-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+
+  border-radius: 3px;
+  overflow: hidden;
+  outline: 0px;
+  height: 30px;
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+  float: left;
+  width: 0px;
+}
+
+.options button.active {
+  background-color: rgba(255,255,255,0.3);
+  opacity: 1;
+}
+
+.options:before {
+  content: "";
+  border-top: 5px solid rgba(0,0,0,0.9);
+  border-bottom: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-left: 5px solid transparent;
+  position: absolute;
+  margin-left: -5px;
+  bottom: -15px;
+  height: 5px;
+  width: 0px;
+  left: 50%;
+}
+
+.url {
+  -webkit-font-smoothing: antialiased;
+}

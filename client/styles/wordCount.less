@@ -1,0 +1,39 @@
+/*********************************************
+ * WORK COUNT
+ *********************************************/
+
+.wordcount {
+  margin-left: -150px;
+  width: 300px;
+}
+
+.word-counter {
+  box-shadow: inset 0px 0px 5px -2px rgba(0,0,0,0.9);
+  position: fixed;
+  height: 100%;
+  right: 0px;
+  width: 5px;
+  top: 0px;
+}
+
+.word-counter.active {
+  right: 0px;
+}
+
+.word-counter .progress {
+  -webkit-transition: all 400ms ease-in-out;
+  -moz-transition: all 400ms ease-in-out;
+  -ms-transition: all 400ms ease-in-out;
+  -o-transition: all 400ms ease-in-out;
+  transition: all 400ms ease-in-out;
+
+  background-color: deepskyblue;
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  height: 0%;
+}
+
+.progress.complete{
+  background-color: greenyellow;
+}

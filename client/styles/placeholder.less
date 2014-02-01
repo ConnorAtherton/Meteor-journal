@@ -1,0 +1,38 @@
+.Placehold {
+  position: relative;
+
+  * {
+        min-height: 1px;
+        outline: none;
+        resize: none;
+        zoom: 1;
+        -moz-box-sizing: border-box;
+      box-sizing: border-box;
+  }
+
+  > p {
+    position: relative;
+    min-height: 1px;
+    outline: none;
+    z-index: 2;
+    box-sizing: border-box;
+
+    &:last-child { margin-bottom: 0; }
+    &:first-child { margin-top: 0; }
+  }
+
+  .Placehold .Placeholder + p{
+      margin-top:0;
+  }
+
+  .Placeholder {
+    margin: 0;
+    z-index: 1;
+    opacity: 0.5;
+    position: absolute;
+    z-index: 1;
+    pointer-events: none;
+
+    + p { margin-top: 0; }
+  }
+}
