@@ -5,48 +5,10 @@
 </head>
 
 <body>
-    {{> tooltipEditor}}
-
-    {{> uiElements}}
-
-    {{> editor}}
+    {{> body}}
 </body>
 
-<template name="editor">
-  <section>
-    <header class="header" contenteditable="true"></header>
-    <article class="content" contenteditable="true"></article>
-  </section>
+<template name="body">
+    {{yield}}
 </template>
 
-<template name="uiElements">
-  <div class="ui top left">
-    <button class="home icon-home"></button>
-  </div>
-
-  <div class="ui top right">
-    <button class="save icon-floppy"></button>
-  </div>
-
-  <div class="ui word-count bottom left"></div>
-
-  <div class="word-counter">
-    <div class="progress"></div>
-  </div>
-</template>
-
-<template name="tooltipEditor">
-  <div class="text-options">
-          <div class="options">
-                  <span class="no-overflow">
-                          <span class="lengthen ui-inputs">
-                                  <button class="url icon-link"></button>
-                                  <input class="url-input" type="text" placeholder="Type or Paste URL here"/>
-                                  <button class="bold">b</button>
-                                  <button class="italic">i</button>
-                                  <button class="quote">&rdquo;</button>
-                          </span>
-                  </span>
-          </div>
-  </div>
-</template>

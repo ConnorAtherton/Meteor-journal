@@ -1,5 +1,8 @@
 {
   "packages": {
-    "nprogress": {}
+    "nprogress": {},
+    "npm": {},
+    "iron-router": {},
+    "fast-render": {}
   }
 }

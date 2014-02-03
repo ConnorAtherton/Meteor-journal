@@ -1,0 +1,62 @@
+<template name="editor">
+  {{> tooltipEditor}}
+  {{> uiElements}}
+  {{> editorContent}}
+  {{> modals}}
+</template>
+
+<template name="documentEditor">
+  {{> tooltipEditor}}
+  {{> uiElements}}
+  {{> editorContent}}
+  {{> modals}}
+</template>
+
+<template name="editorContent">
+  <section>
+    <header class="header" contenteditable="true"></header>
+    <article class="content" contenteditable="true"></article>
+  </section>
+</template>
+
+<template name="uiElements">
+  <div class="ui top left">
+    <button class="home icon-home"></button>
+  </div>
+
+  <div class="ui top right">
+    <button class="save icon-floppy"></button>
+  </div>
+
+  <div class="ui word-count bottom left"></div>
+
+  <div class="word-counter">
+    <div class="progress"></div>
+  </div>
+</template>
+
+<template name="tooltipEditor">
+  <div class="text-options">
+          <div class="options">
+                  <span class="no-overflow">
+                          <span class="lengthen ui-inputs">
+                                  <button class="url icon-link"></button>
+                                  <input class="url-input" type="text" placeholder="Type or Paste URL here"/>
+                                  <button class="bold">b</button>
+                                  <button class="italic">i</button>
+                                  <button class="quote">&rdquo;</button>
+                          </span>
+                  </span>
+          </div>
+  </div>
+</template>
+
+<template name="modals">
+  <div class="login">
+    <div class="login-inner">
+      <h2>Login with twitter to save work</h2>
+      <div id="loginWithTwitter">Login with twitter</div>
+    </div>
+    <div class="login-arrow top left-top"></div>
+  </div>
+</template>

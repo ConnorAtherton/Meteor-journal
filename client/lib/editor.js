@@ -14,7 +14,6 @@ editor = (function(Meteor) {
     // Set cursor position
     var range = document.createRange();
     var selection = window.getSelection();
-    console.log(range)
     // range.setStart(contentField, 1);
     selection.removeAllRanges();
     selection.addRange(range);
@@ -315,11 +314,41 @@ editor = (function(Meteor) {
   }
 
   function loadState() {
+    console.log(Session.get('currentEntry'));
+
+    /**
+    *
+    * If we are logged in and a current entry is
+    * stored, meaning we have been editing, we find
+    * the doc and populate editor;
+    *
+    * Note: we should instead redirect to the correct route
+    * if the user is already logged in. (/:name/:document)
+    *
+    **/
+
+    if(Meteor.user() && Session.get('currentEntry')) {
+      console.log('load from the monogdbv')
+      var doc = Entries.find({_id: Session.get('currentEntry')})
+
+      headerField.innerHTML = doc.title;
+      contentField.innerHTML = doc.body;
+      return ui.updateWordCount();
+    }
+
+    console.log('load from localstorage');
+
+    /**
+    *
+    * Else we try and load from localstorage. If
+    * the browser doesn't support it then it just doesn't
+    * save unless they log in first
+    *
+    **/
 
     if ( localStorage['header'] && localStorage[ 'header' ] !== "undefined") {
       headerField.innerHTML = localStorage['header'];
     }
-
     if ( localStorage['article'] ) {
       contentField.innerHTML = localStorage['article'];
     }
@@ -328,11 +357,50 @@ editor = (function(Meteor) {
   }
 
   function saveState() {
+
+    if(Meteor.user()) {
+      if(Session.get('currentEntry')) {
+        update()
+      }
+      else {
+
+        insert();
+      }
+      return;
+    }
+
     if ( supportsHtmlStorage() ) {
       localStorage[ 'wordCount' ] = 500;
       localStorage[ 'header' ] = headerField.innerHTML;
       localStorage[ 'article' ] = contentField.innerHTML;
     }
+  }
+
+  function insert () {
+    Meteor.call('insertArticle', {
+      title: headerField.innerHTML,
+      body: contentField.innerHTML
+    }, function (err, id) {
+      if(err)
+        console.log(err)
+
+      console.log('Returning from the insert', id)
+
+      Session.set('currentEntry', id);
+    });
+  }
+
+  function update () {
+    Meteor.call('updateArticle', {
+      docId: Session.get('currentEntry'),
+      title: headerField.innerHTML,
+      body: contentField.innerHTML
+    }, function (err, id) {
+      if(err)
+        console.log(err)
+      console.log('Returning from the update', id)
+      Session.set('currentEntry', id);
+    });
   }
 
   return {

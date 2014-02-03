@@ -1,0 +1,89 @@
+.login {
+  overflow: hidden;
+  position: absolute;
+  z-index: 900;
+  top: -999px;
+  left: -999px;
+  visibility: visible;
+  font-size: 12px;
+  text-align: center;
+  padding: 11px;
+  opacity: 0;
+  transition: opacity 0.1s ease 0s;
+
+  &.fade {
+    opacity: 1;
+  }
+
+  > .login-inner {
+    position: relative;
+    max-width: 250px;
+    padding: 15px;
+    background: none repeat scroll 0% 0% rgb(255, 130, 255);
+    border-radius: 4px;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25), 0px 0px 1px rgba(0, 0, 0, 0.35);
+
+    h2 { margin-top: 0; }
+
+    #loginWithTwitter {
+      height: 20px;
+      line-height: 20px;
+      text-transform: uppercase;
+      font-family: 12px;
+    }
+  }
+
+  .login-arrow {
+    position: absolute;
+
+    &.top { top: 1px; }
+    &.bottom { bottom: 1px; .arrow-bottom; }
+  }
+}
+
+/**
+*
+* Classes for modal arrow tips
+*
+**/
+.top-right { margin-left: 75%; left: -9px; .arrow-up; }
+.top-left { margin-left: 25px; left: 0px; .arrow-up; }
+.top-center { margin-left: 50%; left: -9px; .arrow-up; }
+
+.bottom-right { margin-left: 75%; left: -9px; }
+.bottom-left { margin-left: 25%; left: -9px;}
+.bottom-center { margin-left: 50%; left: -9px; }
+
+.left-top { left: 1px; margin-top: 10%; .arrow-left !important; }
+
+.arrow-up {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid black;
+}
+
+.arrow-bottom {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #f00;
+}
+.arrow-right {
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 10px solid #f00;
+}
+
+.arrow-left {
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right:10px solid #f00;
+}
+

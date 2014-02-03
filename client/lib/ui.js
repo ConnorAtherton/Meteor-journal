@@ -26,13 +26,9 @@ ui = (function() {
 
     wordCountActive = false;
 
-    if ( supportsHtmlStorage() ) {
-      editor.loadState();
-    }
-
-    window.setInterval(function () {
-      editor.saveState();
-    }, saveInterval)
+    // window.setInterval(function () {
+    //   editor.saveState();
+    // }, saveInterval)
 
   }
 

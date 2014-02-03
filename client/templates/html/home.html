@@ -1,0 +1,11 @@
+<template name="home">
+  <div class="container">
+    <h2>This is the home route </h2>
+    <button id="createNew">Create new document</button>
+    {{#each entries}}
+      <div class="div">
+        <a href="/{{screenName}}/{{_id}}">{{title}}</a>
+      </div>
+    {{/each}}
+  </div>
+</template>
