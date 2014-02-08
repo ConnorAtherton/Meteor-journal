@@ -5,7 +5,7 @@ Template.home.entries = function () {
 
 Template.home.helpers({
   screenName: function () {
-    return Meteor.user().services.twitter.screenName
+    return 'Gus'; //Meteor.user().services.twitter.screenName
   }
 });
 

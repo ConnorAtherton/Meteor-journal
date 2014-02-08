@@ -19,16 +19,16 @@ ui = (function() {
 
   function init() {
 
-    saveInterval = 5000;
+    saveInterval = 15000;
     wordCountValue = 50;
 
     bindElements();
 
     wordCountActive = false;
 
-    // window.setInterval(function () {
-    //   editor.saveState();
-    // }, saveInterval)
+    window.setInterval(function () {
+      editor.saveState();
+    }, saveInterval)
 
   }
 

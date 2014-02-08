@@ -19,14 +19,8 @@ function homeClicked(e, tmpl) {
   Session.set('loginOpen', true);
   $('body').addClass('loginOpen');
 
-  if (!Meteor.userId()) {
     // logged in so show the login via twitter
     showLoginHome('.home');
-  }
-
-  // Fade out the article and title and navigate back
-  // to the home screen
-  console.log('we are logged in for the home!');
 }
 
 /**

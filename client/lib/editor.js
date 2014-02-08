@@ -36,7 +36,6 @@ editor = (function(Meteor) {
 
       document.onkeyup = function( event ) {
         checkTextHighlighting( event );
-        saveState();
       }
 
     } else {
@@ -314,8 +313,6 @@ editor = (function(Meteor) {
   }
 
   function loadState() {
-    console.log(Session.get('currentEntry'));
-
     /**
     *
     * If we are logged in and a current entry is
